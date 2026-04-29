@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>デスク設計メモ</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+      background: #F8F6F2;
+      color: #333;
+      padding: 48px 32px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    h1 { font-size: 22px; font-weight: 300; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .meta { font-size: 12px; color: #AAA; letter-spacing: 0.06em; margin-bottom: 48px; }
+    h2 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #BBBBBB;
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E8E4DC;
+    }
+    .card {
+      background: white;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      border: 1px solid #EDE8DC;
+    }
+    .card-title { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 8px; }
+    .card-value { font-size: 18px; font-weight: 300; color: #222; margin-bottom: 4px; }
+    .card-note { font-size: 12px; color: #999; }
+    .decided { border-left: 3px solid #8A7A5E; }
+    .pending { border-left: 3px solid #C4A870; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { text-align: left; padding: 8px 12px; background: #F0EDE8; color: #777; font-weight: 600; font-size: 11px; letter-spacing: 0.06em; }
+    td { padding: 10px 12px; border-bottom: 1px solid #F0EDE8; color: #444; }
+    tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block; padding: 2px 8px;
+      border-radius: 2px; font-size: 11px; font-weight: 600;
+    }
+    .badge-ok { background: #E8F0E0; color: #5A8040; }
+    .badge-pending { background: #FFF5E0; color: #B08030; }
+    .badge-no { background: #F5E8E8; color: #A04040; }
+    ul { padding-left: 20px; }
+    li { font-size: 13px; color: #555; margin-bottom: 4px; }
+    .price { font-size: 20px; font-weight: 300; color: #8A7A5E; }
+    .price-note { font-size: 11px; color: #AAA; margin-top: 2px; }
+    a { color: #8A7A5E; }
+  </style>
+</head>
+<body>
+
+  <h1>デスク設計メモ</h1>
+  <div class="meta">2026.04 ／ ナチュラル寄りMCM</div>
+
+  <!-- レイアウト -->
+  <h2>レイアウト</h2>
+  <div class="grid">
+    <div class="card decided">
+      <div class="card-title">部屋の横幅</div>
+      <div class="card-value">250 cm</div>
+    </div>
+    <div class="card decided">
+      <div class="card-title">デスク幅</div>
+      <div class="card-value">180 cm</div>
+      <div class="card-note">右端から180cm</div>
+    </div>
+    <div class="card decided">
+      <div class="card-title">左スペース（汎用）</div>
+      <div class="card-value">70 cm</div>
+      <div class="card-note">植物・ホビーワゴン・照明など</div>
+    </div>
+    <div class="card decided">
+      <div class="card-title">天板奥行き</div>
+      <div class="card-value">690 mm</div>
+    </div>
+  </div>
+
+  <!-- 天板 -->
+  <h2>天板</h2>
+  <div class="card decided">
+    <div class="card-title">素材</div>
+    <div class="card-value">ウォールナット集成材 30mm</div>
+    <div class="card-note">蜜蝋ワックス仕上げ（ダイニングテーブルと同じ）</div>
+  </div>
+  <div class="card pending">
+    <div class="card-title">代替候補（価格次第）</div>
+    <div class="card-value">ブラックチェリー / ナラ（オーク）30mm</div>
+    <div class="card-note">いずれもMCMで使われた素材・自然色のまま使う。マルトクで価格確認要</div>
+  </div>
+
+  <h2>加工オプション</h2>
+  <table>
+    <tr><th>項目</th><th>内容</th><th>状態</th></tr>
+    <tr>
+      <td>面取り</td>
+      <td>裏面C面（150°）＋磨き</td>
+      <td><span class="badge badge-ok">決定</span></td>
+    </tr>
+    <tr>
+      <td>コーナーR</td>
+      <td>前面2角のみ R5mm</td>
+      <td><span class="badge badge-ok">決定</span></td>
+    </tr>
+    <tr>
+      <td>反り止め</td>
+      <td>不要（集成材×30mm×4点支持）</td>
+      <td><span class="badge badge-no">なし</span></td>
+    </tr>
+  </table>
+
+  <!-- 支持構造 -->
+  <h2>脚・支持構造</h2>
+  <table>
+    <tr><th>位置</th><th>部材</th><th>備考</th></tr>
+    <tr><td>右端</td><td>IKEA ALEX（36×58×70cm）</td><td>天板を直置き</td></tr>
+    <tr><td>中央奥</td><td>IKEA ODIRIS 1本</td><td></td></tr>
+    <tr><td>左端前後</td><td>IKEA ODIRIS 2本</td><td>前後に配置</td></tr>
+  </table>
+  <div style="margin-top:12px; font-size:12px; color:#999; padding-left:4px;">
+    ※ ALEXの奥行き58cm、天板69cm → 前面11cmはみ出し。面取りとの干渉なし。
+  </div>
+
+  <!-- デスク上レイアウト -->
+  <h2>デスク上レイアウト</h2>
+  <table>
+    <tr><th>エリア</th><th>配置するもの</th></tr>
+    <tr><td>左ゾーン（〜70cm）</td><td>レコードプレーヤー（45×36cm）</td></tr>
+    <tr><td>モニター前</td><td>27インチモニター（62cm幅）＋モニターアーム</td></tr>
+    <tr><td>モニター両脇</td><td>デスクスピーカー（小型）</td></tr>
+    <tr><td>右ゾーン</td><td>小型観葉植物 or 小物</td></tr>
+    <tr><td>ALEX上</td><td>本・フレームアートなど</td></tr>
+  </table>
+
+  <!-- 左スペース -->
+  <h2>左スペース 70cm（汎用）</h2>
+  <ul>
+    <li>大型観葉植物（10号・鉢径30cm）</li>
+    <li>ホビーワゴン（RÅSKOG等、幅35cm）</li>
+    <li>アークスタンドランプ</li>
+    <li>組み合わせ自由（70cmあれば2アイテム並べられる）</li>
+  </ul>
+
+  <!-- スタンドランプ候補 -->
+  <h2>スタンドランプ候補</h2>
+  <table>
+    <tr><th>製品</th><th>価格帯</th><th>特徴</th></tr>
+    <tr><td><strong>Flos Arco</strong></td><td>¥160,000〜</td><td>アーク型・大理石ベース・MCM最強格</td></tr>
+    <tr><td>Louis Poulsen PH Floor</td><td>¥90,000〜</td><td>グレアゼロ・デンマークMCM</td></tr>
+    <tr><td>Anglepoise Type 75 Grand</td><td>¥60,000〜</td><td>調整自在・実用的</td></tr>
+    <tr><td>HAY Matin Floor</td><td>¥25,000〜</td><td>シンプル・控えめ</td></tr>
+  </table>
+
+  <!-- 価格 -->
+  <h2>天板 価格（マルトクショップ）</h2>
+  <div class="card decided">
+    <div class="card-title">ウォールナット集成材 1800×690×30mm</div>
+    <div class="price">¥67,580</div>
+    <div class="price-note">＋面取り・コーナーR加工費 ＋ 送料（路線便 ¥8,000〜15,000）</div>
+  </div>
+  <div class="card">
+    <div class="card-title">概算合計</div>
+    <div class="price">¥80,000〜90,000</div>
+    <div class="price-note">蜜蝋ワックスはダイニングと共用可</div>
+  </div>
+  <div style="margin-top:16px;">
+    <a href="https://shop.woodworks-marutoku.com/products/engineeredwood/item/s017.php">→ マルトクショップ（ブラックチェリー・ナラの価格確認はこちら）</a>
+  </div>
+
+  <!-- 素材まとめ -->
+  <h2>素材の検討まとめ</h2>
+  <table>
+    <tr><th>素材</th><th>MCM度</th><th>判断</th></tr>
+    <tr><td>ウォールナット集成材 30mm</td><td>★★★★★</td><td><span class="badge badge-ok">本命</span></td></tr>
+    <tr><td>ブラックチェリー 30mm</td><td>★★★★★</td><td><span class="badge badge-pending">価格確認中</span></td></tr>
+    <tr><td>ナラ（オーク）30mm</td><td>★★★★☆</td><td><span class="badge badge-pending">価格確認中</span></td></tr>
+    <tr><td>ウォールナット節あり 20mm</td><td>★★★★★</td><td><span class="badge badge-no">薄すぎ</span></td></tr>
+    <tr><td>ゴムの木＋ブラウン塗装</td><td>★★☆☆☆</td><td><span class="badge badge-no">見送り</span></td></tr>
+    <tr><td>タモ・ホワイトアッシュ</td><td>★★☆☆☆</td><td><span class="badge badge-no">MCM文脈外</span></td></tr>
+  </table>
+
+</body>
+</html>
